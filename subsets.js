@@ -40,6 +40,5 @@ function processSolution(solution, data) {
 
 // Construct candidates.
 function constructCandidates() {
-    return [true, false]
+    return [false, true]
 }
-
