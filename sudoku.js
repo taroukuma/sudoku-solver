@@ -19,6 +19,8 @@ function getEmptyCells(board) {
     return result
 }
 
+let COUNT = 0
+let COUNT1 = 0
 /**
  * Perform the backtracking search.
  * 
@@ -27,7 +29,7 @@ function getEmptyCells(board) {
  */
 function backtrack(board) {
 
-    const emptyCells = getEmptyCells(board)
+    let emptyCells = getEmptyCells(board)
 
     // If the board is complete, process it.
     if (emptyCells.length === 0) {
@@ -36,11 +38,13 @@ function backtrack(board) {
     }
     // If the soulution is not complete, recursively backtrack.
     else {
+        COUNT++
+
+        //emptyCells = emptyCells.sort((a, b) => (constructCandidates(board, a).length < constructCandidates(board, b).length ? -1 : 1))
         const firstEmptyCell = emptyCells[0]
 
         // make a deep copy of the board        
         const boardCopy = board.map(row => [...row])
-
         const candidates = constructCandidates(board, firstEmptyCell)
 
         // Add each candidate to the currSoln and recursively backtrack.
@@ -50,7 +54,7 @@ function backtrack(board) {
                 return true
             }
         }
-
+        COUNT1++
         return false
     }
 }
@@ -129,9 +133,23 @@ let nineBynine2 = [
     [0, 0, 7, 0, 0, 0, 0, 0, 0],
     [0, 0, 1, 8, 3, 7, 0, 0, 0]
 ]
-// console.log(isSectorValid(9, nineBynine1, [4, 4]));
-backtrack(nineBynine2)
 
+let nineBynine3 = [
+    [6, 0, 0, 0, 0, 5, 0, 9, 0],
+    [0, 0, 0, 7, 4, 0, 1, 0, 0],
+    [0, 0, 8, 0, 0, 0, 0, 0, 2],
+    [0, 0, 7, 0, 0, 0, 0, 1, 3],
+    [0, 6, 0, 8, 0, 9, 0, 5, 0],
+    [1, 9, 0, 0, 0, 0, 4, 0, 0],
+    [3, 0, 0, 0, 0, 0, 5, 0, 0],
+    [0, 0, 4, 0, 5, 7, 0, 0, 0],
+    [0, 8, 0, 3, 0, 0, 0, 0, 1]
+]
+
+console.time('okay')
+// console.log(isSectorValid(9, nineBynine1, [4, 4]));
+backtrack(nineBynine3)
+console.timeEnd('okay')
 
 /**
  * Returns an array of possible candidates for
@@ -165,6 +183,8 @@ function constructCandidates(board, emptyCell) {
  */
 function processSolution(solution) {
     console.log(solution);
+    console.log("COUNT: " + COUNT)
+    console.log("COUNT1: " + COUNT)
 }
 
 // let sudoku = [
