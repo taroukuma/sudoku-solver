@@ -26,6 +26,7 @@ function getEmptyCells(board) {
  * @returns {boolean}
  */
 function backtrack(board) {
+
     const emptyCells = getEmptyCells(board)
 
     // If the board is complete, process it.
@@ -106,7 +107,7 @@ function isSectorValid(num, board, cell) {
 
     return true
 }
-let nineBynine = [
+let nineBynine1 = [
     [1, 0, 0, 2, 0, 0, 0, 0, 9],
     [0, 0, 7, 6, 0, 0, 8, 2, 1],
     [9, 2, 0, 0, 4, 0, 7, 3, 0],
@@ -117,8 +118,19 @@ let nineBynine = [
     [4, 1, 0, 0, 0, 0, 0, 0, 0],
     [0, 6, 8, 0, 2, 0, 0, 0, 4]
 ]
-// console.log(isSectorValid(9, nineBynine, [4, 4]));
-
+let nineBynine2 = [
+    [0, 0, 0, 5, 9, 4, 3, 0, 0],
+    [0, 0, 0, 0, 0, 0, 5, 0, 0],
+    [3, 0, 0, 0, 0, 2, 0, 0, 4],
+    [8, 0, 0, 0, 0, 0, 1, 0, 6],
+    [0, 1, 0, 4, 5, 8, 0, 3, 0],
+    [2, 0, 4, 0, 0, 0, 0, 0, 9],
+    [9, 0, 0, 6, 0, 0, 0, 0, 2],
+    [0, 0, 7, 0, 0, 0, 0, 0, 0],
+    [0, 0, 1, 8, 3, 7, 0, 0, 0]
+]
+// console.log(isSectorValid(9, nineBynine1, [4, 4]));
+backtrack(nineBynine2)
 
 
 /**
@@ -155,11 +167,11 @@ function processSolution(solution) {
     console.log(solution);
 }
 
-let sudoku = [
-    [1, 0, 0],
-    [0, 2, 0],
-    [0, 0, 3]
-]
+// let sudoku = [
+//     [1, 0, 0],
+//     [0, 2, 0],
+//     [0, 0, 3]
+// ]
 
 // console.log(constructCandidates(sudoku, [0, 1]));
 
