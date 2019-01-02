@@ -1,0 +1,26 @@
+{
+  "name": "octosolver",
+  "version": "0.1.0",
+  "description": "A fast sudoku solver",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taroukuma/sudoku-solver.git"
+  },
+  "keywords": [
+    "sudoku",
+    "solve"
+  ],
+  "author": "Kumar",
+  "license": "MIT",
+  "contributors": [
+    "Brian Smith <brian.smith@riseup.net>"
+  ],
+  "bugs": {
+    "url": "https://github.com/taroukuma/sudoku-solver/issues"
+  },
+  "homepage": "https://github.com/taroukuma/sudoku-solver#readme"
+}
